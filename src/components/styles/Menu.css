@@ -1,0 +1,14 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.menu div {
+    padding: 10px;
+    background-color: rgb(70, 70, 70);
+}

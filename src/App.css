@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  
+  height: 100px;
+
+}
+
+.App-header {
+  
+  flex-direction: column;
+  background-color: rgb(167, 167, 167);
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+ body{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  flex-basis: auto;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+button {
+  text-align: center;
+  margin: 10px;
+  background-color: rgb(134, 134, 134);
+  border: none;
+  color: white;
+
+}

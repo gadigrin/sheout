@@ -1,0 +1,80 @@
+.order-modal {
+    background-color: white;
+    display: flex;
+    height:60%;
+    width:80%;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    text-align: center;
+    
+}
+
+.order-content {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+.order-wrapper {
+    width: 90%;
+    align-self: center;
+    margin-bottom: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(197, 197, 197);
+    border-radius: 5px;
+}
+
+.order-content .item{
+    display: flex;
+    flex-direction: row;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: rgb(197, 197, 197);
+    padding-left: 5px;
+    
+}
+
+.order-content p{
+    text-align: left;
+    line-height: 0%;
+    font-size: 1rem;
+    padding-left: 5px;
+    padding-top: 2px;
+}
+
+.order-content img {
+    max-width:50px;
+    width: auto;
+    height: 100%;
+    align-self: center;
+}
+
+.buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.order-modal button {
+    width: 90%;
+    align-self: center;
+    border-radius: 5px;
+}
+
+
+.order-Overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.558);
+}

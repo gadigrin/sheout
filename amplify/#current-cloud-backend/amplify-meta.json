@@ -1,15 +1,158 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-sheout-dev-150947-authRole",
-      "UnauthRoleArn": "arn:aws:iam::907489790628:role/amplify-sheout-dev-150947-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::907489790628:role/amplify-sheout-dev-150947-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-sheout-dev-150947-deployment",
-      "UnauthRoleName": "amplify-sheout-dev-150947-unauthRole",
-      "StackName": "amplify-sheout-dev-150947",
-      "StackId": "arn:aws:cloudformation:us-east-1:907489790628:stack/amplify-sheout-dev-150947/1ea15860-38b1-11ec-90e3-0a7e59e04d9f",
-      "AmplifyAppId": "d3prl765qefwt7"
+      "AuthRoleName": "amplify-sheoutgadi-dev-141006-authRole",
+      "UnauthRoleArn": "arn:aws:iam::949815275750:role/amplify-sheoutgadi-dev-141006-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::949815275750:role/amplify-sheoutgadi-dev-141006-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-sheoutgadi-dev-141006-deployment",
+      "UnauthRoleName": "amplify-sheoutgadi-dev-141006-unauthRole",
+      "StackName": "amplify-sheoutgadi-dev-141006",
+      "StackId": "arn:aws:cloudformation:us-east-2:949815275750:stack/amplify-sheoutgadi-dev-141006/a979c960-3b0c-11ec-b7c6-023ebe32615c",
+      "AmplifyAppId": "d3cpp4kv2ehzz7",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-sheoutgadi-dev-141006-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    }
+  },
+  "auth": {
+    "sheoutgadi7d18c90e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sheoutgadi-dev-141006-deployment/amplify-cfn-templates/auth/sheoutgadi7d18c90e-cloudformation-template.yml",
+        "logicalId": "authsheoutgadi7d18c90e"
+      },
+      "lastPushTimeStamp": "2021-11-10T14:56:18.515Z",
+      "output": {
+        "UserPoolId": "us-east-2_gidlFDqXd",
+        "AppClientIDWeb": "6qkshre5nm1muie46sglr3rci9",
+        "AppClientID": "2flp6cmosbdpa33fr78ccevu3e",
+        "IdentityPoolId": "us-east-2:3aef24d5-56ea-4393-ac23-575aa8c28fe2",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:949815275750:userpool/us-east-2_gidlFDqXd",
+        "IdentityPoolName": "sheoutgadi7d18c90e_identitypool_7d18c90e__dev",
+        "UserPoolName": "sheoutgadi7d18c90e_userpool_7d18c90e"
+      },
+      "lastPushDirHash": "vg5d0PJA+WAteFsBNi2vn/ivBSc=",
+      "frontendAuthConfig": {
+        "loginMechanisms": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      }
+    }
+  },
+  "api": {
+    "sheoutgadi": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authsheoutgadi7d18c90e"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "u7hffjhdanffphysipfkfjhzpi",
+        "GraphQLAPIEndpointOutput": "https://xiszcl5osbb25nlvj4bm2xzpvy.appsync-api.us-east-2.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sheoutgadi-dev-141006-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apisheoutgadi"
+      },
+      "lastPushTimeStamp": "2021-11-10T14:56:18.856Z",
+      "lastPushDirHash": "0wwwGK33H8hTp9/WseDiXPihyxs=",
+      "testMode": true
+    },
+    "ordersApi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "submitOrder",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sheoutgadi-dev-141006-deployment/amplify-cfn-templates/api/ordersApi-cloudformation-template.json",
+        "logicalId": "apiordersApi"
+      },
+      "lastPushTimeStamp": "2021-11-10T14:56:18.518Z",
+      "output": {
+        "ApiName": "ordersApi",
+        "RootUrl": "https://144j8hvppj.execute-api.us-east-2.amazonaws.com/dev",
+        "ApiId": "144j8hvppj"
+      },
+      "lastPushDirHash": "o6pM8gY7mxQdpoCeQGQkqXyty5Y="
+    }
+  },
+  "function": {
+    "submitOrder": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "sheoutgadi7d18c90e",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "api",
+          "resourceName": "sheoutgadi",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ]
+        }
+      ],
+      "lastBuildTimeStamp": "2021-11-10T14:36:17.160Z",
+      "lastPackageTimeStamp": "2021-11-10T14:36:21.322Z",
+      "distZipFilename": "submitOrder-616e656643796468332b-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sheoutgadi-dev-141006-deployment",
+        "s3Key": "amplify-builds/submitOrder-616e656643796468332b-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sheoutgadi-dev-141006-deployment/amplify-cfn-templates/function/submitOrder-cloudformation-template.json",
+        "logicalId": "functionsubmitOrder"
+      },
+      "lastPushTimeStamp": "2021-11-10T14:56:18.519Z",
+      "output": {
+        "Region": "us-east-2",
+        "Arn": "arn:aws:lambda:us-east-2:949815275750:function:submitOrder-dev",
+        "Name": "submitOrder-dev",
+        "LambdaExecutionRole": "sheoutgadiLambdaRole515f653b-dev"
+      },
+      "lastPushDirHash": "jAB+PNAGoku7g8oFy93Ox/cbblI=",
+      "lastBuildType": "PROD",
+      "lastDevBuildTimeStamp": "2021-11-10T12:09:04.055Z"
     }
   }
 }
